@@ -1,26 +1,36 @@
-import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+// Style
+import withStyles from '@material-ui/core/styles/withStyles';
+// Images
+import bgImage from 'assets/img/233630_1409340990.jpeg';
+import bombEmoji from 'assets/img/emojis/bomb_emoji.png';
+import dancerEmoji from 'assets/img/emojis/dancer_emoji.png';
+import gemStoneEmoji from 'assets/img/emojis/gem_stone.png';
+import heartWithRibbonEmoji from 'assets/img/emojis/heart_with_ribbon.png';
+import infoWomanEmoji from 'assets/img/emojis/info_woman.png';
+import nailPolishEmoji03 from 'assets/img/emojis/nail_polish_01.png';
+import nailPolishEmoji01 from 'assets/img/emojis/nail_polish_02.png';
+import womanFairyEmoji from 'assets/img/emojis/woman-fairy-medium-skin-tone_1f9da-1f3fd-200d-2640-fe0f.png';
+import womanGestOkEmoji from 'assets/img/emojis/woman-gesturing-ok-type-3_1f646-1f3fc-200d-2640-fe0f.png';
+import womanRaiseHandEmoji from 'assets/img/emojis/woman-raising-hand-type-4_1f64b-1f3fd-200d-2640-fe0f.png';
+import womanRunningEmoji from 'assets/img/emojis/woman-running-type-4_1f3c3-1f3fd-200d-2640-fe0f.png';
+import infoWomanEmoji02 from 'assets/img/emojis/woman_infodesk.png';
+import landingPageStyle from 'assets/jss/material-kit-react/views/landingPage.jsx';
+import classNames from 'classnames';
+// Components
+import Button from 'components/CustomButtons/Button.jsx';
+import Footer from 'components/Footer/Footer.jsx';
+import GridContainer from 'components/Grid/GridContainer.jsx';
+import GridItem from 'components/Grid/GridItem.jsx';
+import Header from 'components/Header/Header.jsx';
+import HeaderLinks from 'components/Header/HeaderLinks.jsx';
+import Parallax from 'components/Parallax/Parallax.jsx';
+// Core
+import React from 'react';
+// Sections
+import ProductSection from './Sections/ProductSection.jsx';
+import TeamSection from './Sections/TeamSection.jsx';
+import WorkSection from './Sections/WorkSection.jsx';
 
-// @material-ui/icons
-
-// core components
-import Header from "components/Header/Header.jsx";
-import Footer from "components/Footer/Footer.jsx";
-import GridContainer from "components/Grid/GridContainer.jsx";
-import GridItem from "components/Grid/GridItem.jsx";
-import Button from "components/CustomButtons/Button.jsx";
-import HeaderLinks from "components/Header/HeaderLinks.jsx";
-import Parallax from "components/Parallax/Parallax.jsx";
-
-import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.jsx";
-
-// Sections for this page
-import ProductSection from "./Sections/ProductSection.jsx";
-import TeamSection from "./Sections/TeamSection.jsx";
-import WorkSection from "./Sections/WorkSection.jsx";
 
 const dashboardRoutes = [];
 
@@ -32,26 +42,26 @@ class LandingPage extends React.Component {
         <Header
           color="transparent"
           routes={dashboardRoutes}
-          brand="Material Kit React"
+          brand="Nova Nail Salon"
           rightLinks={<HeaderLinks />}
           fixed
           changeColorOnScroll={{
-            height: 400,
-            color: "white"
+            height: 500,
+            color: 'white',
           }}
           {...rest}
         />
-        <Parallax filter image={require("assets/img/landing-bg.jpg")}>
+        <Parallax filter image={bgImage}>
           <div className={classes.container}>
             <GridContainer>
-              <GridItem xs={12} sm={12} md={6}>
-                <h1 className={classes.title}>Your Story Starts With Us.</h1>
-                <h4>
-                  Every landing page needs a small description after the big
-                  bold title, that's why we added this text here. Add here all
-                  the information that can make you or your product create the
-                  first impression.
-                </h4>
+              <GridItem xs={12} sm={12} md={8}>
+                <h1 className={classes.title}>Healthy nail services</h1>
+                <div>
+                  <img src={nailPolishEmoji03} alt='nailPolish' style={{ width: '3rem' }} />
+                  <img src={gemStoneEmoji} alt='hiddenGem' style={{ width: '3rem' }} />
+                  <img src={heartWithRibbonEmoji} alt='heartWithRibbon' style={{ width: '3rem' }} />
+                  <img src={dancerEmoji} alt='dancer' style={{ width: '3rem' }} />
+                </div>
                 <br />
                 <Button
                   color="danger"
@@ -60,7 +70,7 @@ class LandingPage extends React.Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fas fa-play" />Watch video
+                  Our services
                 </Button>
               </GridItem>
             </GridContainer>
