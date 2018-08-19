@@ -1,165 +1,143 @@
-import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-
-// @material-ui/icons
-
-// core components
-import GridContainer from "components/Grid/GridContainer.jsx";
-import GridItem from "components/Grid/GridItem.jsx";
-import Button from "components/CustomButtons/Button.jsx";
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
-import CardFooter from "components/Card/CardFooter.jsx";
-
-import teamStyle from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.jsx";
-
-import team1 from "assets/img/faces/avatar.jpg";
-import team2 from "assets/img/faces/christian.jpg";
-import team3 from "assets/img/faces/kendall.jpg";
+import withStyles from '@material-ui/core/styles/withStyles';
+import Build from '@material-ui/icons/Build';
+import Chat from '@material-ui/icons/Chat';
+import Face from '@material-ui/icons/Face';
+import tabsStyle from "assets/jss/material-kit-react/views/componentsSections/tabsStyle.jsx";
+import CustomTabs from 'components/CustomTabs/CustomTabs.jsx';
+import GridContainer from 'components/Grid/GridContainer.jsx';
+import GridItem from 'components/Grid/GridItem.jsx';
+import React from 'react';
 
 class TeamSection extends React.Component {
   render() {
     const { classes } = this.props;
-    const imageClasses = classNames(
-      classes.imgRaised,
-      classes.imgRoundedCircle,
-      classes.imgFluid
-    );
+    console.log(classes);
     return (
       <div className={classes.section}>
-        <h2 className={classes.title}>Here is our team</h2>
-        <div>
-          <GridContainer>
-            <GridItem xs={12} sm={12} md={4}>
-              <Card plain>
-                <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                  <img src={team1} alt="..." className={imageClasses} />
-                </GridItem>
-                <h4 className={classes.cardTitle}>
-                  Gigi Hadid
-                  <br />
-                  <small className={classes.smallTitle}>Model</small>
-                </h4>
-                <CardBody>
-                  <p className={classes.description}>
-                    You can write here details about one of your team members.
-                    You can give more details about what they do. Feel free to
-                    add some <a href="#pablo">links</a> for people to be able to
-                    follow them outside the site.
-                  </p>
-                </CardBody>
-                <CardFooter className={classes.justifyCenter}>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-twitter"} />
-                  </Button>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-instagram"} />
-                  </Button>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-facebook"} />
-                  </Button>
-                </CardFooter>
-              </Card>
-            </GridItem>
-            <GridItem xs={12} sm={12} md={4}>
-              <Card plain>
-                <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                  <img src={team2} alt="..." className={imageClasses} />
-                </GridItem>
-                <h4 className={classes.cardTitle}>
-                  Christian Louboutin
-                  <br />
-                  <small className={classes.smallTitle}>Designer</small>
-                </h4>
-                <CardBody>
-                  <p className={classes.description}>
-                    You can write here details about one of your team members.
-                    You can give more details about what they do. Feel free to
-                    add some <a href="#pablo">links</a> for people to be able to
-                    follow them outside the site.
-                  </p>
-                </CardBody>
-                <CardFooter className={classes.justifyCenter}>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-twitter"} />
-                  </Button>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-linkedin"} />
-                  </Button>
-                </CardFooter>
-              </Card>
-            </GridItem>
-            <GridItem xs={12} sm={12} md={4}>
-              <Card plain>
-                <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                  <img src={team3} alt="..." className={imageClasses} />
-                </GridItem>
-                <h4 className={classes.cardTitle}>
-                  Kendall Jenner
-                  <br />
-                  <small className={classes.smallTitle}>Model</small>
-                </h4>
-                <CardBody>
-                  <p className={classes.description}>
-                    You can write here details about one of your team members.
-                    You can give more details about what they do. Feel free to
-                    add some <a href="#pablo">links</a> for people to be able to
-                    follow them outside the site.
-                  </p>
-                </CardBody>
-                <CardFooter className={classes.justifyCenter}>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-twitter"} />
-                  </Button>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-instagram"} />
-                  </Button>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-facebook"} />
-                  </Button>
-                </CardFooter>
-              </Card>
-            </GridItem>
-          </GridContainer>
+        <div className={classes.container}>
+          <div id="nav-tabs">
+            <h3>Navigation Tabs</h3>
+            <GridContainer>
+              <GridItem xs={12} sm={12} md={6}>
+                <h3>
+                  <small>Tabs with Icons on Card</small>
+                </h3>
+                <CustomTabs
+                  headerColor="primary"
+                  tabs={[
+                    {
+                      tabName: 'Profile',
+                      tabIcon: Face,
+                      tabContent: (
+                        <p className={classes.textCenter}>
+                          I think that’s a responsibility that I have, to push
+                          possibilities, to show people, this is the level that
+                          things could be at. So when you get something that has
+                          the name Kanye West on it, it’s supposed to be pushing
+                          the furthest possibilities. I will be the leader of a
+                          company that ends up being worth billions of dollars,
+                          because I got the answers. I understand culture. I am
+                          the nucleus.
+                        </p>
+                      ),
+                    },
+                    {
+                      tabName: 'Messages',
+                      tabIcon: Chat,
+                      tabContent: (
+                        <p className={classes.textCenter}>
+                          I think that’s a responsibility that I have, to push
+                          possibilities, to show people, this is the level that
+                          things could be at. I will be the leader of a company
+                          that ends up being worth billions of dollars, because
+                          I got the answers. I understand culture. I am the
+                          nucleus. I think that’s a responsibility that I have,
+                          to push possibilities, to show people, this is the
+                          level that things could be at.
+                        </p>
+                      ),
+                    },
+                    {
+                      tabName: 'Settings',
+                      tabIcon: Build,
+                      tabContent: (
+                        <p className={classes.textCenter}>
+                          think that’s a responsibility that I have, to push
+                          possibilities, to show people, this is the level that
+                          things could be at. So when you get something that has
+                          the name Kanye West on it, it’s supposed to be pushing
+                          the furthest possibilities. I will be the leader of a
+                          company that ends up being worth billions of dollars,
+                          because I got the answers. I understand culture. I am
+                          the nucleus.
+                        </p>
+                      ),
+                    },
+                  ]}
+                />
+              </GridItem>
+              <GridItem xs={12} sm={12} md={6}>
+                <h3>
+                  <small>Tabs on Plain Card</small>
+                </h3>
+                <CustomTabs
+                  plainTabs
+                  headerColor="danger"
+                  tabs={[
+                    {
+                      tabName: 'Home',
+                      tabContent: (
+                        <p className={classes.textCenter}>
+                          I think that’s a responsibility that I have, to push
+                          possibilities, to show people, this is the level that
+                          things could be at. So when you get something that has
+                          the name Kanye West on it, it’s supposed to be pushing
+                          the furthest possibilities. I will be the leader of a
+                          company that ends up being worth billions of dollars,
+                          because I got the answers. I understand culture. I am
+                          the nucleus.
+                        </p>
+                      ),
+                    },
+                    {
+                      tabName: 'Updates',
+                      tabContent: (
+                        <p className={classes.textCenter}>
+                          I think that’s a responsibility that I have, to push
+                          possibilities, to show people, this is the level that
+                          things could be at. I will be the leader of a company
+                          that ends up being worth billions of dollars, because
+                          I got the answers. I understand culture. I am the
+                          nucleus. I think that’s a responsibility that I have,
+                          to push possibilities, to show people, this is the
+                          level that things could be at.
+                        </p>
+                      ),
+                    },
+                    {
+                      tabName: 'History',
+                      tabContent: (
+                        <p className={classes.textCenter}>
+                          think that’s a responsibility that I have, to push
+                          possibilities, to show people, this is the level that
+                          things could be at. So when you get something that has
+                          the name Kanye West on it, it’s supposed to be pushing
+                          the furthest possibilities. I will be the leader of a
+                          company that ends up being worth billions of dollars,
+                          because I got the answers. I understand culture. I am
+                          the nucleus.
+                        </p>
+                      ),
+                    },
+                  ]}
+                />
+              </GridItem>
+            </GridContainer>
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default withStyles(teamStyle)(TeamSection);
+export default withStyles(tabsStyle)(TeamSection);

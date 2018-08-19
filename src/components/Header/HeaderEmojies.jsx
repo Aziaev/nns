@@ -7,7 +7,6 @@ import headerLinksStyle from 'assets/jss/material-kit-react/components/headerLin
 import React from 'react';
 
 function HeaderEmojies({ ...props }) {
-  const { classes } = props;
   return (
     <div style={{ padding: '0 0 0.2rem 1rem' }}>
       <img src={nailPolishEmoji03} alt='nailPolish' style={{ width: '1rem' }} />

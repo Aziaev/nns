@@ -1,6 +1,6 @@
 import { title } from 'assets/jss/material-kit-react.jsx';
 
-const productStyle = {
+const contactsStyle = {
   section: {
     padding: '70px 0',
     textAlign: 'center',
@@ -18,4 +18,4 @@ const productStyle = {
   },
 };
 
-export default productStyle;
+export default contactsStyle;

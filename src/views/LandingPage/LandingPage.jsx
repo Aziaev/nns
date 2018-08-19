@@ -1,14 +1,11 @@
 import withStyles from '@material-ui/core/styles/withStyles';
-// Images
 import bgImage from 'assets/img/233630_1409340990.jpeg';
 import dancerEmoji from 'assets/img/emojis/dancer_emoji.png';
 import gemStoneEmoji from 'assets/img/emojis/gem_stone.png';
 import heartWithRibbonEmoji from 'assets/img/emojis/heart_with_ribbon.png';
 import nailPolishEmoji03 from 'assets/img/emojis/nail_polish_01.png';
-// Style
 import landingPageStyle from 'assets/jss/material-kit-react/views/landingPage.jsx';
 import classNames from 'classnames';
-// Components
 import Button from 'components/CustomButtons/Button.jsx';
 import Footer from 'components/Footer/Footer.jsx';
 import GridContainer from 'components/Grid/GridContainer.jsx';
@@ -17,12 +14,10 @@ import Header from 'components/Header/Header.jsx';
 import HeaderEmojies from 'components/Header/HeaderEmojies';
 import HeaderLinks from 'components/Header/HeaderLinks.jsx';
 import Parallax from 'components/Parallax/Parallax.jsx';
-// Core
 import React from 'react';
-// Sections
+import ContactsSection from 'views/LandingPage/Sections/ContactsSection';
+import PhilosophySection from 'views/LandingPage/Sections/PhilosophySection';
 import ProductSection from './Sections/ProductSection.jsx';
-import TeamSection from './Sections/TeamSection.jsx';
-import WorkSection from './Sections/WorkSection.jsx';
 
 const dashboardRoutes = [];
 
@@ -71,11 +66,17 @@ class LandingPage extends React.Component {
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
+            <PhilosophySection />
+          </div>
+        </div>
+        <div className={classNames(classes.main, classes.mainRaisedProduct)}>
+          <div className={classes.container}>
             <ProductSection />
-            Map section
-            Contacts and feedback
-            <TeamSection />
-            <WorkSection />
+          </div>
+        </div>
+        <div className={classNames(classes.main, classes.mainRaisedContacts)}>
+          <div className={classes.container}>
+            <ContactsSection />
           </div>
         </div>
         <Footer />

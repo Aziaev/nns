@@ -366,7 +366,7 @@ class SectionNavbars extends React.Component {
               }
             />
             <Header
-              brand="Transparent"
+              brand="Transparentoa"
               color="transparent"
               rightLinks={
                 <List className={classes.list}>

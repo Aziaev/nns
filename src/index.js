@@ -1,19 +1,41 @@
 import 'assets/scss/material-kit-react.css?v=1.1.0';
-import { createBrowserHistory } from 'history';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Router, Switch } from 'react-router';
-import indexRoutes from 'routes/index.jsx';
+import { AppContainer } from 'react-hot-loader';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import Root from './routes/Root';
 
-const hist = createBrowserHistory();
+// Development Only
+// import hotReloadRoutes from './util/hotReloadRoutes';
 
-ReactDOM.render(
-  <Router history={hist}>
-    <Switch>
-      {indexRoutes.map((prop, key) => {
-        return <Route path={prop.path} key={key} component={prop.component} />;
-      })}
-    </Switch>
-  </Router>,
-  document.getElementById('root'),
-);
+// Local Variables
+const rootEl = document.getElementById('root');
+
+
+injectTapEventPlugin();
+// 300ms response time fix for iOS
+
+const renderApp = (RootComponent) => {
+  ReactDOM.render(
+    <AppContainer>
+      <RootComponent />
+    </AppContainer>,
+    rootEl,
+  );
+};
+// render application method for instantiation and HMR.
+
+renderApp(Root);
+// instantiate the application
+
+if (module.hot) {
+  module.hot.accept([
+    './routes/Root',
+  ], () => {
+    const NextRoot = require('./routes/Root').default; // eslint-disable-line global-require
+    // require path is same as module hot path
+
+    renderApp(NextRoot);
+    // re-render the updated app
+  });
+}

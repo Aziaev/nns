@@ -1,9 +1,7 @@
 import withStyles from '@material-ui/core/styles/withStyles';
 import Brush from '@material-ui/icons/Brush';
-import Fingerprint from '@material-ui/icons/Fingerprint';
-import VerifiedUser from '@material-ui/icons/VerifiedUser';
-import Toys from '@material-ui/icons/Toys';
 import Spa from '@material-ui/icons/Spa';
+import Toys from '@material-ui/icons/Toys';
 import productStyle from 'assets/jss/material-kit-react/views/landingPageSections/productStyle.jsx';
 import GridContainer from 'components/Grid/GridContainer.jsx';
 import GridItem from 'components/Grid/GridItem.jsx';
@@ -16,16 +14,13 @@ class ProductSection extends React.Component {
     return (
       <div className={classes.section}>
         <GridContainer justify="center">
-          <GridItem xs={12} sm={12} md={8}>
-            <h2 className={classes.title}>Our Philosophy</h2>
-            <h5 className={classes.description}>
-              Located in the Jewelers District of downtown Chicago, Nova Nail Salon is a hidden gem that offers safe
-              and healthy nail services using non-toxic cruelty-free nail polishes.
-              We believe that you can have beautifully manicured nails without having to expose yourself to the toxins
-              and chemicals found in the typical nail salon. With that in mind, we have incorporated healthy product
-              alternatives, along with the most advanced and powerful ventilation and extraction technology available
-              for use in Nail Salons.
-            </h5>
+          <GridItem cs={12} sm={12} md={8}>
+            <h2 className={classes.title}>Product and services</h2>
+            <span>Express Manicure / Signature Manicure / Spa Manicure</span>
+            <p>
+              For your choice: No-chip, nail polish lacquer, dip powder, gel
+              Products we use: Zoya, Madam Glam, Revel
+            </p>
           </GridItem>
         </GridContainer>
         <GridContainer>

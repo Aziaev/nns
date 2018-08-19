@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-Documentation
+/Documentation
 
 # testing
 /coverage
@@ -25,3 +25,6 @@ yarn-error.log*
 
 # Idea files
 .idea
+
+#config
+.config
